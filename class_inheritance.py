@@ -1,10 +1,24 @@
 __author__ = 'Sindbad the Sailor'
 
 
+def is_parent(parent, child, classes):
+    if len(classes[child]) == 0:
+        print("No")
+        return False
+    for el in classes[child]:
+        if el == parent:
+            print("Yes")
+            return True
+        return is_parent(parent, el, classes)
+
+
+def initialize(queries, classes):
+    for q in queries:
+        is_parent(q[0], q[1], classes)
+
+
 def main():
-    global classes
     classes = {}
-    global queries
     queries = []
     num_classes = int(input())
     counter = 0
@@ -14,24 +28,16 @@ def main():
         if len(cls) == 2:
             parents_classes = cls[1].split()
             classes[child_class] = parents_classes
-            #print(cls)
-            #print(child_class)
-            #print(parents_classes)
         else:
-            #print(child_class)
             classes[child_class] = []
-        #print(classes)
         counter += 1
-    print(classes)
     counter = 0
     num_queries = int(input())
     while counter < num_queries:
         qry = str(input()).split()
         queries.append(qry)
         counter += 1
-    print(queries)
-
-
+    initialize(queries, classes)
 
 
 if __name__ == '__main__':
