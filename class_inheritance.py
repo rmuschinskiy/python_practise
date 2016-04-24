@@ -2,14 +2,19 @@ __author__ = 'Sindbad the Sailor'
 
 
 def is_parent(parent, child, classes):
-    if len(classes[child]) == 0:
-        print("No")
-        return False
+    if parent == child:
+        print("Yes")
+        return True
+    if parent in classes[child]:
+        print("Yes")
+        return True
     for el in classes[child]:
         if el == parent:
             print("Yes")
             return True
-        return is_parent(parent, el, classes)
+        is_parent(parent, el, classes)
+    print("No")
+    return False
 
 
 def initialize(queries, classes):
