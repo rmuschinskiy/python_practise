@@ -25,6 +25,7 @@ def initialize(queries, classes):
 def main():
     classes = {}
     queries = []
+    undeclared_classes = {}
     num_classes = int(input())
     counter = 0
     while counter < num_classes:
@@ -36,6 +37,11 @@ def main():
         else:
             classes[child_class] = []
         counter += 1
+    for val in classes.values():
+        for el in val:
+            if el not in classes:
+                undeclared_classes[el] = []
+    classes.update(undeclared_classes)
     counter = 0
     num_queries = int(input())
     while counter < num_queries:
