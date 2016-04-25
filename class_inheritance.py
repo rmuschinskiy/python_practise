@@ -33,7 +33,10 @@ def main():
         child_class = cls[0].strip()
         if len(cls) == 2:
             parents_classes = cls[1].split()
-            classes[child_class] = parents_classes
+            if child_class in classes:
+                classes[child_class].extend(parents_classes)
+            else:
+                classes[child_class] = parents_classes
         else:
             classes[child_class] = []
         counter += 1
