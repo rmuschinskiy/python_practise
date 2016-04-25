@@ -1,4 +1,4 @@
-__author__ = 'Sindbad the Sailor'
+__author__ = 'Roman Mushchinskiy'
 
 
 def is_parent(parent, child, classes):
