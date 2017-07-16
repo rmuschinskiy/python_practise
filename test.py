@@ -1,29 +1,9 @@
-__author__ = 'Sindbad the Sailor'
+figure = int(input())
+counter = 0
+for i in range(1, figure + 1):
+    for j in range(1, i + 1):
+        if counter == figure:
+            break
+        print(i, end=' ')
+        counter += 1
 
-
-import os
-
-resp_dict = {'65545': [{'req1': 'request1'}, {'req2': 'request2'}, {'req3': 'request3'}], '64234': [{'req4': 'request4'}, {'req5': 'request5'}, {'req6': 'request6'}]}
-
-""" get request """
-print(resp_dict['65545'][0]['req1'])
-
-""" get list length """
-print(resp_dict['65545'].__len__())
-
-""" add element to the dict """
-
-if '65545' not in resp_dict:
-    resp_dict['65545'] = []
-    resp_dict['65545'].append({'resp1': 'response1'})
-else:
-    resp_dict['65545'].append({'resp1': 'response1'})
-
-if '65545' not in resp_dict:
-    resp_dict['65545'] = []
-resp_dict['65545'].append({'resp1': 'response1'})
-
-print(resp_dict['65545'])
-
-
-answer = 
